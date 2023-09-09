@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT</title>
+    <link rel="stylesheet" href="asset/css/contact.css">
+    <link rel="stylesheet" href="asset/icon/fontawesome-free-6.3.0-web/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="asset/css/chatbot.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/jquery.convform.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/phone.css">
+</head>
+
+<body>
+    <!-- --------------header----------------- -->
+    <section class="header">
+        <nav>
+            <a href=""><img src="/asset/img/logo.png" alt=""></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="/index.html">HOME</a></li>
+                    <li><a href="/menu.html">MENU</a></li>
+                    <li><a href="/about.html">ABOUT</a></li>
+                    <li><a href="/blog.html">BLOG</a></li>
+                    <li><a href="/contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="nav-contact">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <a href="login.html"><i class="fa-solid fa-user"></i></a>
+                <i class="fa-sharp fa-solid fa-bag-shopping"></i>
+            </div>
+        </nav>
+        <div class="textbox">
+            <h1>Get In Touch </h1>
+        </div>
+    </section>
+    <!-- ------------------------Body----------------------------- -->
+    <section>
+        <div class="body_main">
+            <div class="body_main_1">
+                <h2><b><i>+1234 567 890</i></b></h2>
+                <h3>Address</h3>
+                <p>1234 N Spring St, VietNam, CA90122</p>
+            </div>
+        </div>
+        <div class="body_main_2">
+            <div class="body_main-main">
+                <img src="/asset/img/map.png" alt="">
+                <div class="info">
+                    <p>Your name</p>
+                    <input type="text">
+                    <p>Phone</p>
+                    <input type="text">
+                    <p>Email</p>
+                    <input type="text">
+                    <p>Comment or Message</p>
+                    <textarea rows="5" required class="text_area"></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- --------------------------Footer------------------------ -->
+    <section class="footer">
+        <div class="footer-contact">
+            <div class="footer-contact-add">
+                <i class="fa-solid fa-house"></i>
+                <div>
+                    <p class="contact"><b>Address</b></p>
+                    <p class="text">201 An Thu 1</p>
+                </div>
+            </div>
+            <div class="footer-contact-add">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                    <p class="contact"><b>Contact</b></p>
+                    <p class="text">Hotline: 0938200344</p>
+                    <p class="text">Email: f.house@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-contact-add">
+                <i class="fa-solid fa-door-open"></i>
+                <div>
+                    <p class="contact"><b>Open</b></p>
+                    <p class="text">Daily: 11:30 AM - 9:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-contact-add">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <p class="contact"><b>Email</b></p>
+                    <div class="contact-col">
+                        <form action="">
+                            <!-- <input type="text" name="" id="" placeholder="Enter Your Name" required> -->
+                            <input type="email" name="" id="" placeholder="Enter Email Address" required>
+                            <textarea rows="3" placeholder="Message" required></textarea>
+                            <button type="submit" class="hero-btn red-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="follow-us">
+            <p><b>Follow us:</b></p>
+            <div>
+                <i class="fa-brands fa-facebook fa-beat"></i>
+                <i class="fa-brands fa-instagram fa-beat"></i>
+                <i class="fa-brands fa-twitter fa-beat"></i>
+            </div>
+        </div>
+
+    </section>
+    <!-- ----------------------------- CHATBOT ---------------------------------- -->
+    <div class="container-chat">
+        <div class="container">
+            <div id="call-phone" class="call-phone">
+                <div class="call-phone__circle"></div>
+                <div class="call-phone__circle-fill"></div>
+                <div class="call-phone__circle-img">
+                    <i class="fa fa-phone icon-phone"></i>
+                </div>
+            </div>
+        </div>
+        <!-- start chatbot -->
+        <div class="chat_box">
+            <div class="my-conv-form-wrapper">
+                <form action="" method="GET" class="hidden">
+                    <!-- Hiện ra 2 lựa chọn -->
+                    <select data-conv-question="Welcome to Farm House. <br> What do you want to choose?"
+                        name="category">
+                        <option value="LuaChon1">Booking</option>
+                        <option value="LuaChon2">See Menu</option>
+                    </select>
+                    <!-- cái tùy vào lựa chọn mà hỏi -->
+                    <div data-conv-fork="category">
+                        <div data-conv-case="LuaChon1">
+                            <input type="text" name="domainName"
+                                data-conv-question="Please give me the time, date and time to book a table!">
+                        </div>
+                        <div data-conv-case="LuaChon2" data-conv-fork="first-question2">
+                            <input type="text" name="companyName" data-conv-question="This is menu! ">
+
+                        </div>
+                    </div>
+                    <!-- này thì kiểu điền thứ gì đó (tên) -->
+                    <input type="text" name="name" data-conv-question="Thanks you!">
+                    <!-- hiện theo thứ vùa điền (name="name") -->
+                    <!-- <input type="text" data-conv-question="Hi {name}, <br> Is this okay?" data-no-answer="true"> -->
+                    <!-- viết theo font data-pattern còn không thì xóa data-pattern điền chi đó cũng đc -->
+                    <!-- <input data-conv-question="Write in font (email)" -->
+                    <!-- data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" -->
+                    <!-- type="email" name="email" required placeholder="Chữ gợi ý bên dưới"> -->
+                    <!-- muốn submit thì làm kiểu nó sẽ reset lại trang vs thay đổi tên miền (bt tên miền ko) -->
+                    <select data-conv-question="Okay, <br> Have a nice day">
+                        <option value="Yes">Confirm</option>
+                    </select>
+
+                </form>
+            </div>
+        </div>
+        <!-- end chatbot -->
+
+
+
+    </div>
+    <!-- ---------------------  CHATBOT JAVASCRIPT  ------------------------- -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".container").click(function () {
+                $(".chat_box").slideDown();
+            });
+            $(".chat_box").mouseleave(function () {
+                $(".chat_box").slideUp();
+            });
+        });
+    </script>
+    <!-- test chatbot -->
+    <script type="text/javascript" src="asset/js/jquery.convform.js"></script>
+    <script type="text/javascript" src="asset/js/chatbot.js"></script>
+    <!-- end -->
+
+
+
+
+</body>
+
+</html>
